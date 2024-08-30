@@ -37,16 +37,16 @@ const Hero = () => {
         <IoIosArrowDropleft
           className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 text-white cursor-pointer"
           onClick={handlePrev}
-          size={56} sm:size={72}
+          size={56}
         />
         <IoIosArrowDropright
           className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 text-white cursor-pointer"
           onClick={handleNext}
-          size={56} sm:size={32}
+          size={56}
         />
       </div>
-    
-      <div className="container mx-auto px-2 sm:px-4">
+
+      <div className="container py-20 mx-auto px-2 sm:px-4">
         <section className="mb-8 sm:mb-12">
           <motion.h2
             className="text-red-500 text-xl sm:text-2xl font-semibold mb-4"
@@ -109,6 +109,14 @@ const Hero = () => {
               { name: 'Блендер BRAUN JB3272SI BL', price: '199.99₼', oldPrice: '249.99₼' },
               { name: 'Блендер BRAUN JB3100BK BL', price: '149.99₼', oldPrice: '179.99₼' },
               { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
+              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
+              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
+              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
+              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
+              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
+              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },     
+              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
+              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
             ].map((product) => (
               <motion.div
                 key={product.name}
@@ -142,6 +150,12 @@ const Hero = () => {
             {[
               { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '799.99₼', oldPrice: '1039.99₼' },
               { name: 'Ноутбук Acer Aspire A315-59G-5283', price: '1349.99₼', oldPrice: '1649.99₼' },
+              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '780.99₼', oldPrice: '1039.99₼' },
+              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '799.99₼', oldPrice: '103.99₼' },
+              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '793.99₼', oldPrice: '1500.99₼' },
+              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '499.99₼', oldPrice: '109.99₼' },
+              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '599.99₼', oldPrice: '139.99₼' },
+
             ].map((offer) => (
               <motion.div
                 key={offer.name}

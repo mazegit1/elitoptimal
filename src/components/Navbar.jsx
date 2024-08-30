@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar text-white">
-      <div className="navbar-top border-b border-b-black bg-[#FF1E37] flex items-center justify-between py-4 px-4 md:px-10 lg:px-32">
+      <div className="navbar-top border-b border-b-black bg-[#FF1E37] flex items-center justify-between py-4 px-4 sm:px-8 md:px-12 lg:px-20">
         <motion.div className="block md:hidden" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           {isMenuOpen ? (
             <AiOutlineClose className="text-3xl text-black cursor-pointer" onClick={toggleMenu} />
@@ -38,7 +38,7 @@ const Navbar = () => {
         </motion.div>
 
         <motion.div className="hidden md:flex gap-8">
-          {['Кампании', 'Бренды', 'Филиалы', 'Контакты', 'SAMSUNG', 'Кредит'].map((link, index) => (
+          {['Кампании', 'Бренды', 'Филиалы', 'Контакты', 'SAMSUNG', 'Кредит', 'О нас', 'Помощь'].map((link, index) => (
             <motion.a
               key={index}
               href="/"
@@ -53,18 +53,17 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <motion.div className="flex items-center gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <GoVerified />
-            <span>Регистрация</span>
+            <span className="hidden md:inline">Регистрация</span>
           </motion.div>
           <motion.div className="flex items-center gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <GoPersonFill />
-            <span>Личный кабинет</span>
+            <span className="hidden md:inline">Личный кабинет</span>
           </motion.div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <motion.div
-        className={`absolute top-0 left-0 w-full bg-white text-[#FF1E37] z-10 p-4 ${isMenuOpen ? 'block' : 'hidden'}`}
+        className={`fixed top-0 left-0 w-full bg-white text-[#FF1E37] z-20 p-4 ${isMenuOpen ? 'block' : 'hidden'} md:hidden`}
         initial="closed"
         animate={isMenuOpen ? 'open' : 'closed'}
         variants={menuVariants}
@@ -75,7 +74,7 @@ const Navbar = () => {
         </div>
 
         <motion.div className="flex flex-col gap-4">
-          {['Кампании', 'Бренды', 'Филиалы', 'Контакты', 'SAMSUNG', 'Кредит'].map((link, index) => (
+          {['Кампании', 'Бренды', 'Филиалы', 'Контакты', 'SAMSUNG', 'Кредит', 'О нас', 'Помощь'].map((link, index) => (
             <motion.a
               key={index}
               href="/"
@@ -87,10 +86,10 @@ const Navbar = () => {
         </motion.div>
       </motion.div>
 
-      <div className="navbar-bottom flex flex-col md:flex-row items-center py-10 px-4 md:px-10 lg:px-32 justify-between">
+      <div className="navbar-bottom flex flex-col md:flex-row items-center py-6 px-4 sm:px-8 md:px-12 lg:px-20 justify-between">
         <motion.img
           src={heroimg}
-          className="w-2/3 md:w-1/5 mb-4 md:mb-0"
+          className="w-1/2 sm:w-1/3 md:w-1/6 mb-4 md:mb-0"
           alt="Hero Logo"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -99,7 +98,7 @@ const Navbar = () => {
         <motion.input
           type="text"
           placeholder="Поиск..."
-          className="text-gray-600 border-2 rounded-3xl border-[#FF1E37] px-4 py-2 mb-4 md:mb-0 w-full md:w-auto"
+          className="text-gray-600 border-2 rounded-3xl border-[#FF1E37] px-4 py-2 mb-4 md:mb-0 w-full md:w-2/5 lg:w-1/3"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -110,10 +109,10 @@ const Navbar = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <FaPhoneVolume className="text-red-600 text-4xl" />
+          <FaPhoneVolume className="text-red-600 text-3xl sm:text-4xl md:text-5xl" />
           <div>
-            <h1 className="text-red-600 font-semibold text-sm md:text-md">*4848</h1>
-            <p className="text-[#636363] text-xs md:text-sm">
+            <h1 className="text-red-600 font-semibold text-sm md:text-md lg:text-lg">*4848</h1>
+            <p className="text-[#636363] text-xs md:text-sm lg:text-base">
               Будни 09:00 - 20:00 <br />
               Выходные 10:00 - 18:00
             </p>
@@ -125,9 +124,9 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <IoHeartCircle className="text-red-600 text-3xl md:text-4xl" />
-          <FaShoppingCart className="text-red-600 text-3xl md:text-4xl" />
-          <span className="text-gray-500">О Товаров - 0.00₼</span>
+          <IoHeartCircle className="text-red-600 text-3xl sm:text-4xl md:text-5xl" />
+          <FaShoppingCart className="text-red-600 text-3xl sm:text-4xl md:text-5xl" />
+          <span className="text-gray-500 text-sm md:text-md lg:text-lg">О Товаров - 0.00₼</span>
         </motion.div>
       </div>
     </nav>

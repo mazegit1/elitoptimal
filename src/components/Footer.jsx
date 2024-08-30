@@ -62,7 +62,7 @@ const Footer = () => {
         >
           <h3 className="text-red-500 text-lg font-semibold">Контактная информация</h3>
           <p className="text-gray-400">Адрес: Ашиг Молла Джума 46Б, город Баку, Наримановский район</p>
-          <p className="text-gray-400">Email: <a href="mailto:info@elitoptimal.az" className="hover:text-gray-300">info@elitoptimal.az</a></p>
+          <p className="text-gray-400 hover:text-red-600">Email: <a href="mailto:editor.azer@gmail.com">editor.azer@gmail.com</a></p>
         </motion.div>
       </div>
 
@@ -113,7 +113,7 @@ const Footer = () => {
           transition={{ duration: 0.5, type: "tween", ease: "easeOut" }}
         >
           Copyright © 2024 "ELİT EO" MMC. All rights reserved.<br />
-          Created by: <a href="https://amiroff.az" className="hover:text-red-500">amiroff.az</a>
+          Created by: <a href="https://amiroff.az" className="hover:text-red-500">Mazegit</a>
         </motion.p>
       </div>
     </footer>
