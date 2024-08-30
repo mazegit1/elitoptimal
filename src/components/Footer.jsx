@@ -102,7 +102,6 @@ const Footer = () => {
             <FaCcVisa className="text-8xl text-gray-400" />
             <FaCcMastercard className="text-8xl text-gray-400" />
             <FaCcAmex className="text-8xl text-gray-400" />
-            <FaCcJcb className="text-8xl text-gray-400" />
           </motion.div>
         </div>
 
