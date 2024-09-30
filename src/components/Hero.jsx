@@ -6,15 +6,18 @@ import slideimg2 from '../images/slideimg2.png';
 import slideimg3 from '../images/slideimg3.png';
 import slideimg4 from '../images/slideimg4.png';
 
+// Image array for the slider
 const images = [slideimg1, slideimg2, slideimg3, slideimg4];
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // Track current image index
 
+  // Handle next slide
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
+  // Handle previous slide
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
@@ -22,6 +25,7 @@ const Hero = () => {
   return (
     <div className="hero bg-gray-200 text-white py-8 px-4 sm:py-16 sm:px-8">
       <div className="slider relative overflow-hidden w-full h-[300px] sm:h-[500px] md:h-[600px] lg:h-[800px]">
+        {/* Image Slider */}
         <AnimatePresence>
           <motion.img
             key={currentIndex}
@@ -31,14 +35,16 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
           />
         </AnimatePresence>
+        {/* Previous Button */}
         <IoIosArrowDropleft
           className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 text-white cursor-pointer"
           onClick={handlePrev}
           size={56}
         />
+        {/* Next Button */}
         <IoIosArrowDropright
           className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 text-white cursor-pointer"
           onClick={handleNext}
@@ -46,61 +52,68 @@ const Hero = () => {
         />
       </div>
 
+      {/* Categories Section */}
       <div className="container py-20 mx-auto px-2 sm:px-4">
         <section className="mb-8 sm:mb-12">
           <motion.h2
             className="text-red-500 text-xl sm:text-2xl font-semibold mb-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
+            transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
           >
             Категории
           </motion.h2>
           <div className="flex flex-wrap gap-4">
-            {['Бытовая техника', 'Телефоны и планшеты', 'Компьютерная техника', 'ТВ, Аудио, Фото-Видео'].map((category) => (
-              <motion.div
-                key={category}
-                className="category bg-red-600 rounded-xl text-white p-3 sm:p-4 flex-1 flex items-center justify-center text-sm sm:text-base"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, type: "tween", ease: "easeInOut" }}
-              >
-                {category}
-              </motion.div>
-            ))}
+            {['Бытовая техника', 'Телефоны и планшеты', 'Компьютерная техника', 'ТВ, Аудио, Фото-Видео'].map(
+              (category) => (
+                <motion.div
+                  key={category}
+                  className="category bg-red-600 rounded-xl text-white p-3 sm:p-4 flex-1 flex items-center justify-center text-sm sm:text-base"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, type: 'tween', ease: 'easeInOut' }}
+                >
+                  {category}
+                </motion.div>
+              )
+            )}
           </div>
         </section>
 
+        {/* Brands Section */}
         <section className="mb-8 sm:mb-12">
           <motion.h2
             className="text-red-500 text-xl sm:text-2xl font-semibold mb-4"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, type: "spring", stiffness: 80 }}
+            transition={{ duration: 0.5, type: 'spring', stiffness: 80 }}
           >
             Бренды
           </motion.h2>
           <div className="flex flex-wrap gap-4">
-            {['Bosch', 'Vestel', 'Samsung', 'LG', 'Huawei', 'Sony', 'Carrier', 'Babyliss', 'Philips', 'Delonghi'].map((brand) => (
-              <motion.div
-                key={brand}
-                className="brand bg-white text-black p-3 sm:p-4 flex-1 flex items-center justify-center text-sm sm:text-base"
-                initial={{ opacity: 0, rotate: -15 }}
-                animate={{ opacity: 1, rotate: 0 }}
-                transition={{ duration: 0.5, type: "spring", damping: 10 }}
-              >
-                {brand}
-              </motion.div>
-            ))}
+            {['Bosch', 'Vestel', 'Samsung', 'LG', 'Huawei', 'Sony', 'Carrier', 'Babyliss', 'Philips', 'Delonghi'].map(
+              (brand) => (
+                <motion.div
+                  key={brand}
+                  className="brand bg-white text-black p-3 sm:p-4 flex-1 flex items-center justify-center text-sm sm:text-base"
+                  initial={{ opacity: 0, rotate: -15 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  transition={{ duration: 0.5, type: 'spring', damping: 10 }}
+                >
+                  {brand}
+                </motion.div>
+              )
+            )}
           </div>
         </section>
 
+        {/* Products Section */}
         <section className="mb-8 sm:mb-12">
           <motion.h2
             className="text-red-500 text-xl sm:text-2xl font-semibold mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, type: "tween", ease: "easeOut" }}
+            transition={{ duration: 0.5, type: 'tween', ease: 'easeOut' }}
           >
             Товары
           </motion.h2>
@@ -109,22 +122,14 @@ const Hero = () => {
               { name: 'Блендер BRAUN JB3272SI BL', price: '199.99₼', oldPrice: '249.99₼' },
               { name: 'Блендер BRAUN JB3100BK BL', price: '149.99₼', oldPrice: '179.99₼' },
               { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
-              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
-              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
-              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
-              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
-              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
-              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },     
-              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
-              { name: 'Утюг с Парогенератором Braun IS3132WH', price: '399.99₼', oldPrice: '499.99₼' },
             ].map((product) => (
               <motion.div
                 key={product.name}
                 className="product bg-white p-3 sm:p-4 rounded-lg text-sm sm:text-base"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, type: "tween", ease: "easeInOut" }}
-                whileHover={{ scale: 1.05, boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)" }}
+                transition={{ duration: 0.5, type: 'tween', ease: 'easeInOut' }}
+                whileHover={{ scale: 1.05, boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
               >
                 <h3 className="text-black text-lg sm:text-xl font-semibold">{product.name}</h3>
                 <p className="text-gray-400 line-through">{product.oldPrice}</p>
@@ -137,12 +142,13 @@ const Hero = () => {
           </div>
         </section>
 
+        {/* Special Offers Section */}
         <section>
           <motion.h2
             className="text-red-500 text-xl sm:text-2xl font-semibold mb-4"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, type: "spring", stiffness: 60 }}
+            transition={{ duration: 0.5, type: 'spring', stiffness: 60 }}
           >
             Специальные предложения
           </motion.h2>
@@ -150,20 +156,14 @@ const Hero = () => {
             {[
               { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '799.99₼', oldPrice: '1039.99₼' },
               { name: 'Ноутбук Acer Aspire A315-59G-5283', price: '1349.99₼', oldPrice: '1649.99₼' },
-              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '780.99₼', oldPrice: '1039.99₼' },
-              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '799.99₼', oldPrice: '103.99₼' },
-              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '793.99₼', oldPrice: '1500.99₼' },
-              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '499.99₼', oldPrice: '109.99₼' },
-              { name: 'Ноутбук Acer Aspire A315-59-38U6', price: '599.99₼', oldPrice: '139.99₼' },
-
             ].map((offer) => (
               <motion.div
                 key={offer.name}
                 className="offer bg-white p-3 sm:p-4 rounded-lg text-sm sm:text-base"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, type: "tween", ease: "easeInOut" }}
-                whileHover={{ scale: 1.05, boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)" }}
+                transition={{ duration: 0.5, type: 'tween', ease: 'easeInOut' }}
+                whileHover={{ scale: 1.05, boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
               >
                 <h3 className="text-black text-lg sm:text-xl font-semibold">{offer.name}</h3>
                 <p className="text-gray-400 line-through">{offer.oldPrice}</p>
